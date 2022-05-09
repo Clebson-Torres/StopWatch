@@ -31,7 +31,20 @@ namespace StopWatch
                 multplier = 60;
             if(time == 0)
                 System.Environment.Exit(0);
-            Start(time * multplier);
+            PreStart(time * multplier);
+
+        }
+        static  void PreStart(int time)
+        {
+            Console.Clear();
+            Console.WriteLine("Ready...");
+            Thread.Sleep(1000);
+            Console.WriteLine("Set...");
+            Thread.Sleep(1000);
+            Console.WriteLine("Go!");
+            Thread.Sleep(2500);
+
+            Start(time);
 
         }
         static void Start(int time)
